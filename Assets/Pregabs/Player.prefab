@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 8289718199134052850}
   - component: {fileID: 514485837123165329}
   m_Layer: 0
-  m_Name: Scorpion
+  m_Name: ScorpionPH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7003266582056098377
 Transform:
   m_ObjectHideFlags: 0
@@ -141,6 +141,7 @@ Transform:
   m_Children:
   - {fileID: 7003266582056098377}
   - {fileID: 2424060767359416546}
+  - {fileID: 8826513137574138282}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3854666134813419470
@@ -301,6 +302,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7951015313796034016, guid: 2b1c0e0429d19a044899722c508c3262, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2da73d6518ef0154c91c0389ac7d7127, type: 2}
     - target: {fileID: 919132149155446097, guid: 2b1c0e0429d19a044899722c508c3262, type: 3}
       propertyPath: m_Name
       value: Frog
@@ -314,4 +319,78 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2b1c0e0429d19a044899722c508c3262, type: 3}
   m_PrefabInstance: {fileID: 2749807189162352393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9076067794571867713
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8373751369058686733}
+    m_Modifications:
+    - target: {fileID: -8888584907963407617, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 536a7486a03aa634ba1971ec943b71d5, type: 2}
+    - target: {fileID: -8888584907963407617, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2d7e94fbb4e66e43a32ba91fb2b9835, type: 2}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.35931325
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.32384136
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.995288
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.096962556
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -11.129
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_Name
+      value: Scorpion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 143557d66929f634ab77742c1bc1ccb9, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+--- !u!4 &8826513137574138282 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66c9a47b99dd11049a14257fd73f6bc3, type: 3}
+  m_PrefabInstance: {fileID: 9076067794571867713}
   m_PrefabAsset: {fileID: 0}
