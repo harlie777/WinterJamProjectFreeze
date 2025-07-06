@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d297bba0fd212064591d47d3495b9fd9, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 107523445}
   - component: {fileID: 107523444}
   - component: {fileID: 107523447}
+  - component: {fileID: 107523448}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -209,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 107523443}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2568233, y: -0, z: -0, w: 0.96645844}
-  m_LocalPosition: {x: -0.22, y: 6.38, z: -10}
+  m_LocalPosition: {x: 8.67, y: 9.36, z: -8.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -259,6 +260,15 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!45 &107523448
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107523443}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1 &153258144
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,11 +811,13 @@ MonoBehaviour:
   gridParent: {fileID: 1399211791}
   tileDatabase: {fileID: 11400000, guid: 26bc9b0293d3d0046806fd9c72086952, type: 2}
   playerPrefab: {fileID: 6916547022991794437, guid: 48facfe9f97306141bd6ecbd11a8ff26, type: 3}
-  tileSpacing: 3
+  tileSpacing: 2
   showCoordinates: 1
   labelFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   gizmoColor: {r: 0.3, g: 0.7, b: 1, a: 0.2}
   gridGizmoSize: 4
+  landTilePrefab: {fileID: 3803309641396472540, guid: d5256b9a0a1ec004ba093f6712476594, type: 3}
+  landBorderSize: 2
 --- !u!4 &1399211791
 Transform:
   m_ObjectHideFlags: 0

@@ -16,16 +16,42 @@ public class GridManager : MonoBehaviour
     [Header("Gizmo Settings")]
     public Color gizmoColor = new Color(0.3f, 0.7f, 1f, 0.2f);
     public int gridGizmoSize = 4;
+    [Header("Land Settings")]
+    [SerializeField] private GameObject landTilePrefab;
+    [SerializeField] private int landBorderSize = 2; // how far around the puzzle to fill
 
     private PuzzleData currentPuzzle;
     private GameObject playerInstance;
 
-    // PUBLIC: Call this to spawn the puzzle
+    
+    private void SpawnSurroundingLand(PuzzleData puzzle)
+    {
+        int minX = -landBorderSize;
+        int maxX = puzzle.gridSize + landBorderSize;
+        int minY = -landBorderSize;
+        int maxY = puzzle.gridSize + landBorderSize;
+
+        for (int x = minX; x < maxX; x++)
+        {
+            for (int y = minY; y < maxY; y++)
+            {
+                Vector2Int pos = new Vector2Int(x, y);
+                if (!puzzle.validPositions.Contains(pos))
+                {
+                    Vector3 worldPos = GridToWorld(pos);
+                    Instantiate(landTilePrefab, worldPos, Quaternion.identity, gridParent);
+                }
+            }
+        }
+    }
+   
     public void SpawnGrid(PuzzleData puzzle)
     {
         ClearGrid();
         currentPuzzle = puzzle;
         gridGizmoSize = currentPuzzle.gridSize;
+
+        SpawnSurroundingLand(puzzle);
 
         // Spawn tiles
         foreach (var kvp in puzzle.tiles)
