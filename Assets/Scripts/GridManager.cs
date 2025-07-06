@@ -7,6 +7,9 @@ public class GridManager : MonoBehaviour
     public TileDatabase tileDatabase;
     [SerializeField]
     private GameObject playerPrefab;
+    [SerializeField]
+    private ProceduralWater proceduralWater;
+    
 
     [Header("Grid Settings")]
     public float tileSpacing = 1f;
@@ -50,6 +53,8 @@ public class GridManager : MonoBehaviour
         ClearGrid();
         currentPuzzle = puzzle;
         gridGizmoSize = currentPuzzle.gridSize;
+
+        proceduralWater.GenerateMesh(currentPuzzle.gridSize);
 
         SpawnSurroundingLand(puzzle);
 
