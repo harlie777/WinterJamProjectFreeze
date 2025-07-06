@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
 
     private PuzzleData puzzle;
     private GridManager grid;
+    //Moves 
+    public int num_moves_left = 1;
+    public static event System.Action<int> OnMovesUpdated;
 
     public void Init(PuzzleData puzzleData, Vector2Int startPos, GridManager gridRef)
     {
@@ -18,6 +21,9 @@ public class PlayerController : MonoBehaviour
         currentGridPos = startPos;
         grid = gridRef;
         transform.position = GridToWorld(currentGridPos);
+        num_moves_left = puzzle.minMovesToSolve;
+
+        OnMovesUpdated?.Invoke(num_moves_left);
     }
 
     void Update()
@@ -38,9 +44,10 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(SlideInDirection(dir));
     }
 
-    IEnumerator SlideInDirection(Vector2Int direction)
+        IEnumerator SlideInDirection(Vector2Int direction)
     {
         Vector2Int nextPos = currentGridPos + direction;
+        bool moved = false;
 
         while (puzzle.InBounds(nextPos))
         {
@@ -52,21 +59,37 @@ public class PlayerController : MonoBehaviour
                 break;
             }
 
-            // Goal tile – move and stop
-                if (tile == TileType.Goal)
-                {
-                    Debug.Log("Goal reached!");
-                    SoundManager.PlaySound(SoundType.WIN);
-                    GameManager gm = FindObjectOfType<GameManager>();
-                    if (gm != null)
-                        gm.OnPuzzleSolved();
+            // Reached goal
+            if (tile == TileType.Goal)
+            {
+                Debug.Log("Goal reached!");
+                SoundManager.PlaySound(SoundType.WIN);
+                GameManager gm = FindObjectOfType<GameManager>();
+                if (gm != null)
+                    gm.OnPuzzleSolved();
 
-                    yield return StartCoroutine(MoveTo(nextPos));
-                    yield break;
-                }
+                yield return StartCoroutine(MoveTo(nextPos));
+                yield break;
+            }
 
             yield return StartCoroutine(MoveTo(nextPos));
+            moved = true;
             nextPos += direction;
+        }
+
+        if (moved)
+        {
+            num_moves_left--;
+            OnMovesUpdated?.Invoke(num_moves_left);
+
+            if (num_moves_left <= 0)
+            {
+                Debug.Log("Out of moves! You died.");
+                SoundManager.PlaySound(SoundType.PLAYER_DEATH);
+                // Optionally show UI or trigger reset
+                // Destroy(gameObject);
+                yield break;
+            }
         }
 
         isMoving = false;
@@ -92,12 +115,8 @@ public class PlayerController : MonoBehaviour
     private void RotateToDirection(Vector2Int direction)
     {
         if (direction == Vector2Int.zero) return;
-
         Vector3 lookDirection = new Vector3(direction.x, 0, direction.y);
         if (lookDirection != Vector3.zero)
-        {
             transform.rotation = Quaternion.LookRotation(lookDirection);
-        }
     }
-
 }
