@@ -117,7 +117,7 @@ public class TitleScreenUI : MonoBehaviour
         // When both complete, load the scene
         fadeOutSequence.OnComplete(() =>
         {
-            SceneManager.LoadScene("Level");
+            SceneManager.LoadScene("CamandFeel");
         });
     }
     public void QuitGame()
