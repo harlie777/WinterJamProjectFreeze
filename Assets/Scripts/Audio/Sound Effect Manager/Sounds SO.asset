@@ -21,11 +21,13 @@ MonoBehaviour:
   - name: LAND
     volume: 1
     mixer: {fileID: 0}
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 44830aac3c643d041a80f376c38b9f2b, type: 3}
   - name: RESET
     volume: 1
     mixer: {fileID: 0}
-    sounds: []
+    sounds:
+    - {fileID: 0}
   - name: LOG
     volume: 1
     mixer: {fileID: 0}
@@ -34,7 +36,8 @@ MonoBehaviour:
   - name: PLAYER_DEATH
     volume: 1
     mixer: {fileID: 0}
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 18dad1e38ccbb4d4aa7f6d70722ea25d, type: 3}
   - name: MOVE
     volume: 0.367
     mixer: {fileID: 0}
