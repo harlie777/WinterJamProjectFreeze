@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     void TryMove(Vector2Int dir)
     {
         isMoving = true;
+        RotateToDirection(dir);
         StartCoroutine(SlideInDirection(dir));
     }
 
@@ -50,6 +51,10 @@ public class PlayerController : MonoBehaviour
             if (tile == TileType.Goal)
             {
                 Debug.Log("Goal reached!");
+                GameManager gm = FindObjectOfType<GameManager>();
+                if (gm != null)
+                    gm.OnPuzzleSolved();
+
                 yield return StartCoroutine(MoveTo(nextPos));
                 yield break;
             }
@@ -77,4 +82,16 @@ public class PlayerController : MonoBehaviour
     {
         return new Vector3(pos.x * grid.tileSpacing, 0f, pos.y * grid.tileSpacing);
     }
+
+    private void RotateToDirection(Vector2Int direction)
+    {
+        if (direction == Vector2Int.zero) return;
+
+        Vector3 lookDirection = new Vector3(direction.x, 0, direction.y);
+        if (lookDirection != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(lookDirection);
+        }
+    }
+
 }

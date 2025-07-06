@@ -15,7 +15,7 @@ public class GridManager : MonoBehaviour
 
     [Header("Gizmo Settings")]
     public Color gizmoColor = new Color(0.3f, 0.7f, 1f, 0.2f);
-    public int gridGizmoSize = 10;
+    public int gridGizmoSize = 4;
 
     private PuzzleData currentPuzzle;
     private GameObject playerInstance;
@@ -25,6 +25,7 @@ public class GridManager : MonoBehaviour
     {
         ClearGrid();
         currentPuzzle = puzzle;
+        gridGizmoSize = currentPuzzle.gridSize;
 
         // Spawn tiles
         foreach (var kvp in puzzle.tiles)
