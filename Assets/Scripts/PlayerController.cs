@@ -1,4 +1,5 @@
 using System.Collections;
+using SmallHedge.SoundManager;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void TryMove(Vector2Int dir)
     {
+        SoundManager.PlaySound(SoundType.MOVE);
         isMoving = true;
         RotateToDirection(dir);
         StartCoroutine(SlideInDirection(dir));
@@ -45,19 +47,23 @@ public class PlayerController : MonoBehaviour
             TileType tile = puzzle.GetTileAt(nextPos);
 
             if (tile == TileType.Wall || tile == TileType.Obstacle || tile == TileType.IceBlock)
+            {
+                SoundManager.PlaySound(SoundType.LOG);
                 break;
+            }
 
             // Goal tile – move and stop
-            if (tile == TileType.Goal)
-            {
-                Debug.Log("Goal reached!");
-                GameManager gm = FindObjectOfType<GameManager>();
-                if (gm != null)
-                    gm.OnPuzzleSolved();
+                if (tile == TileType.Goal)
+                {
+                    Debug.Log("Goal reached!");
+                    SoundManager.PlaySound(SoundType.WIN);
+                    GameManager gm = FindObjectOfType<GameManager>();
+                    if (gm != null)
+                        gm.OnPuzzleSolved();
 
-                yield return StartCoroutine(MoveTo(nextPos));
-                yield break;
-            }
+                    yield return StartCoroutine(MoveTo(nextPos));
+                    yield break;
+                }
 
             yield return StartCoroutine(MoveTo(nextPos));
             nextPos += direction;
