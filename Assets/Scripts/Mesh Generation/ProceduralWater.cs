@@ -10,11 +10,9 @@ public class ProceduralWater : MonoBehaviour
 {
     [SerializeField]
     private int gridTileSize;
-
+    [SerializeField]
+    private CameraMover camMover;
     
-    public Material waterMaterial;
-
-
 
 
 
@@ -22,7 +20,7 @@ public class ProceduralWater : MonoBehaviour
     {
         Mesh mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-
+        camMover.MoveCamera(gridCount, gridTileSize);
         int vertCountX = gridCount + 1;
         int vertCountY = gridCount + 1;
 
