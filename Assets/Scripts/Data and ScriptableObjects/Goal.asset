@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Goal
   m_EditorClassIdentifier: 
   type: 3
-  prefab: {fileID: 821487431801130121, guid: 84a30cf0dbc8f544082c6ea5eb305721, type: 3}
+  prefabs:
+  - {fileID: 821487431801130121, guid: 84a30cf0dbc8f544082c6ea5eb305721, type: 3}
   color: {r: 0.12630337, g: 0.4528302, b: 0, a: 0}
   movementCost: 0

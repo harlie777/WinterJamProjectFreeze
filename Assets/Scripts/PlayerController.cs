@@ -1,4 +1,5 @@
 using System.Collections;
+using Cinemachine;
 using SmallHedge.SoundManager;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     private PuzzleData puzzle;
     private GridManager grid;
+    [SerializeField]
+    private CinemachineVirtualCamera cutSceneCamera;
     //Moves 
     public int num_moves_left = 1;
     public static event System.Action<int> OnMovesUpdated;
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour
         num_moves_left = puzzle.minMovesToSolve;
 
         OnMovesUpdated?.Invoke(num_moves_left);
+
     }
 
     void Update()
@@ -86,6 +90,10 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Out of moves! You died.");
                 SoundManager.PlaySound(SoundType.PLAYER_DEATH);
+
+                GameManager.Instance.PlayerDied(cutSceneCamera, GetComponent<Animator>());
+               
+
                 // Optionally show UI or trigger reset
                 // Destroy(gameObject);
                 yield break;

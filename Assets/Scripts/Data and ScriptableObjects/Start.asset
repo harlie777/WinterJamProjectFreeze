@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   type: 4
-  prefab: {fileID: 3058899458890040391, guid: fa1fc9d2ece62c94aa21b5cf9698da25, type: 3}
+  prefabs:
+  - {fileID: 821487431801130121, guid: da80a9b0b0ea5c447b38d6c3b5251fea, type: 3}
   color: {r: 0.3227127, g: 0.3962264, b: 0.35188732, a: 0}
   movementCost: 0

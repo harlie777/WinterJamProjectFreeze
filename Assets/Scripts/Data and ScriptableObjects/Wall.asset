@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wall
   m_EditorClassIdentifier: 
   type: 5
-  prefab: {fileID: 3803309641396472540, guid: d5256b9a0a1ec004ba093f6712476594, type: 3}
+  prefabs:
+  - {fileID: 3803309641396472540, guid: d5256b9a0a1ec004ba093f6712476594, type: 3}
   color: {r: 0.3333333, g: 0.3333333, b: 0.3333333, a: 0}
   movementCost: 0

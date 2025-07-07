@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class MovesUI : MonoBehaviour
 {
-    public TMP_Text  movesText;
+    public TMP_Text movesText;
+ 
 
     void OnEnable()
     {
@@ -22,4 +23,6 @@ public class MovesUI : MonoBehaviour
     {
         movesText.text = $"{movesLeft}";
     }
+
+
 }

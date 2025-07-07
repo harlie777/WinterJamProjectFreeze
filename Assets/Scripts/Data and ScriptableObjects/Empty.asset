@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Empty
   m_EditorClassIdentifier: 
   type: 0
-  prefab: {fileID: 6916547022991794437, guid: 48facfe9f97306141bd6ecbd11a8ff26, type: 3}
+  prefabs:
+  - {fileID: 6916547022991794437, guid: 48facfe9f97306141bd6ecbd11a8ff26, type: 3}
   color: {r: 1, g: 0, b: 0.5789547, a: 0}
   movementCost: 0

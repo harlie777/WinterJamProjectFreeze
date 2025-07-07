@@ -55,7 +55,8 @@ public class GridManager : MonoBehaviour
             if (type != TileType.Empty)
             {
                 Vector3 worldPos = GridToWorld(pos);
-                GameObject obj = Instantiate(tileData.prefab, worldPos, Quaternion.identity, gridParent);
+                int prefabId = Random.Range(0, tileData.prefabs.Length);
+                GameObject obj = Instantiate(tileData.prefabs[prefabId], worldPos, Quaternion.identity, gridParent);
 
                 var renderer = obj.GetComponent<Renderer>();
                 if (renderer != null)
@@ -129,7 +130,8 @@ public class GridManager : MonoBehaviour
         if (tileData == null) return;
 
         Vector3 worldPos = GridToWorld(pos);
-        GameObject obj = Instantiate(tileData.prefab, worldPos, Quaternion.identity, gridParent);
+        int prefabId = Random.Range(0, tileData.prefabs.Length);
+        GameObject obj = Instantiate(tileData.prefabs[prefabId], worldPos, Quaternion.identity, gridParent);
 
         var renderer = obj.GetComponent<Renderer>();
         if (renderer != null)

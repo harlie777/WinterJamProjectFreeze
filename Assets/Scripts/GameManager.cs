@@ -1,10 +1,12 @@
 
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     [Header("References")]
     public PuzzleGenerator generator;
     public PuzzleSolver solver;
@@ -31,8 +33,12 @@ public class GameManager : MonoBehaviour
     private HashSet<long> usedSeeds = new();     // Ensures unique puzzles
     private Queue<PuzzleData> upcomingPuzzles = new(); // Queue of solvable, appropriately difficult puzzles
 
+    [Header("Player Lives")]
+    public int lives = 3;
+
     void Start()
     {
+        Instance = this;
         // StartCoroutine(PreGeneratePuzzles(pregenCount));
         // Always maintain a buffer of 1 puzzle ahead
         for(int i = 0; i < 20; i++)
@@ -131,12 +137,28 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnPuzzleSolved()
     {
+        
         currentLevel++;
+        GetComponentInChildren<LevelNumberUI>().UpdateLevel(currentLevel);
         currentDifficulty++;
         // currentDifficultyTarget += difficultyScalingRate;
         lastNumOfMovesRequired += 1;
 
         GenerateAndStartLevel();
+    }
+
+    public void PlayerDied(CinemachineVirtualCamera cutSceneCamera, Animator anim)
+    {
+        if(lives > 0)
+        {
+            gridManager.ResetPuzzle();
+            lives--;
+            GetComponentInChildren<HealthUI>().UpdateLives(lives);
+        }
+        else
+        {
+            Cutscene.instance.StartCutscene(cutSceneCamera, anim);
+        }
     }
 }
 

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: IceBlcok
   m_EditorClassIdentifier: 
   type: 2
-  prefab: {fileID: 991684023644124819, guid: 687f1c447b52e894aa4ffd627dba5b3f, type: 3}
+  prefabs:
+  - {fileID: 991684023644124819, guid: 687f1c447b52e894aa4ffd627dba5b3f, type: 3}
   color: {r: 0, g: 1, b: 0.7518511, a: 0}
   movementCost: 0

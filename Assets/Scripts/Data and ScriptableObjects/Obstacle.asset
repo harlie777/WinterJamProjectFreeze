@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Obstacle
   m_EditorClassIdentifier: 
   type: 1
-  prefab: {fileID: 5968981718207998356, guid: 4fb0a594cbd13cf45bd44ce216f64213, type: 3}
+  prefabs:
+  - {fileID: 5968981718207998356, guid: 4fb0a594cbd13cf45bd44ce216f64213, type: 3}
+  - {fileID: 5968981718207998356, guid: fa56241ae233bdd469688280f116d85e, type: 3}
   color: {r: 0.45911938, g: 0.2389666, b: 0, a: 0}
   movementCost: 0
