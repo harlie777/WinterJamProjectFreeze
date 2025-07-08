@@ -12,6 +12,7 @@ public class CustomGridTestRunner : MonoBehaviour
     {
         // Create sample puzzle data
         PuzzleData puzzle = new PuzzleData(size: level.levelSize);
+        puzzle.minMovesToSolve = 1;
         proceduralWater.GenerateMesh(level.levelSize);
 
 

@@ -1,5 +1,6 @@
 
 using Cinemachine;
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -137,7 +138,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnPuzzleSolved()
     {
-        
+        if(currentLevel == 15)
+        {
+            Application.LoadLevel(2);
+        }
         currentLevel++;
         GetComponentInChildren<LevelNumberUI>().UpdateLevel(currentLevel);
         currentDifficulty++;
@@ -148,20 +152,18 @@ public class GameManager : MonoBehaviour
     }
 
     public void PlayerDied(CinemachineVirtualCamera cutSceneCamera, Animator anim)
-    {
-<<<<<<< Updated upstream
-        if(lives > 0)
-=======
-
+    {   
+        
         if (lives > 1)
->>>>>>> Stashed changes
         {
-            gridManager.ResetPuzzle();
             lives--;
             GetComponentInChildren<HealthUI>().UpdateLives(lives);
+            gridManager.ResetPuzzle();
         }
         else
         {
+            lives--;
+            GetComponentInChildren<HealthUI>().UpdateLives(lives);
             Cutscene.instance.StartCutscene(cutSceneCamera, anim);
             
         }
