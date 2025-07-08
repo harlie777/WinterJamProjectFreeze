@@ -88,8 +88,7 @@ public class PlayerController : MonoBehaviour
 
             if (num_moves_left <= 0)
             {
-                Debug.Log("Out of moves! You died.");
-                SoundManager.PlaySound(SoundType.PLAYER_DEATH);
+                
 
                 GameManager.Instance.PlayerDied(cutSceneCamera, GetComponent<Animator>());
                

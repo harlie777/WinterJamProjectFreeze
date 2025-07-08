@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class MovesUI : MonoBehaviour
 {
     public TMP_Text movesText;
- 
 
     void OnEnable()
     {
