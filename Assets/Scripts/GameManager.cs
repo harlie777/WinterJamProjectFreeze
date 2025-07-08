@@ -149,14 +149,16 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied(CinemachineVirtualCamera cutSceneCamera, Animator anim)
     {
-        if(lives > 0)
+        if(lives > 1)
         {
-            gridManager.ResetPuzzle();
             lives--;
             GetComponentInChildren<HealthUI>().UpdateLives(lives);
+            gridManager.ResetPuzzle();
         }
         else
         {
+            lives--;
+            GetComponentInChildren<HealthUI>().UpdateLives(lives);
             Cutscene.instance.StartCutscene(cutSceneCamera, anim);
         }
     }
