@@ -137,7 +137,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnPuzzleSolved()
     {
-        
+        if(currentLevel == 15)
+        {
+            Application.LoadLevel(2);
+        }
         currentLevel++;
         GetComponentInChildren<LevelNumberUI>().UpdateLevel(currentLevel);
         currentDifficulty++;
