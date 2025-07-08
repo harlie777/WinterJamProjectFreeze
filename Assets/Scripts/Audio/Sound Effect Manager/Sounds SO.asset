@@ -37,7 +37,7 @@ MonoBehaviour:
     volume: 1
     mixer: {fileID: 0}
     sounds:
-    - {fileID: 8300000, guid: 18dad1e38ccbb4d4aa7f6d70722ea25d, type: 3}
+    - {fileID: 8300000, guid: afda939860eca5945ae07a22924cfe61, type: 3}
   - name: MOVE
     volume: 0.367
     mixer: {fileID: 0}
@@ -47,7 +47,6 @@ MonoBehaviour:
     volume: 0.329
     mixer: {fileID: 0}
     sounds:
-    - {fileID: 8300000, guid: 2c962a88149b7a34b8a7a2133e7c2b31, type: 3}
     - {fileID: 8300000, guid: 09afe8bf8dc32224c96b8ffd98914f81, type: 3}
   - name: POPUP
     volume: 1

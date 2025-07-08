@@ -522,10 +522,13 @@ MonoBehaviour:
   - state: 4
     clips:
     - {fileID: 0}
+  - state: 3
+    clips:
+    - {fileID: 8300000, guid: fa0b6a1f4c9fe7347af22a2453a1d110, type: 3}
   currentMusicPool:
     state: 0
     clips: []
-  musicMasterVolume: 0.5
+  musicMasterVolume: 0.35
   intialMenuFadeInTime: 20
   firstTrackInPoolPlayed: 0
   audioSource: {fileID: 0}

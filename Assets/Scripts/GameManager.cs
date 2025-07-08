@@ -149,7 +149,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied(CinemachineVirtualCamera cutSceneCamera, Animator anim)
     {
+<<<<<<< Updated upstream
         if(lives > 0)
+=======
+
+        if (lives > 1)
+>>>>>>> Stashed changes
         {
             gridManager.ResetPuzzle();
             lives--;
@@ -158,6 +163,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Cutscene.instance.StartCutscene(cutSceneCamera, anim);
+            
         }
     }
 }

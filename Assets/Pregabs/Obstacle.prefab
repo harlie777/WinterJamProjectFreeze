@@ -129,7 +129,27 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1076670534480958433}
     m_Modifications:
+<<<<<<< Updated upstream:Assets/Pregabs/Obstacle.prefab
     - target: {fileID: -8679921383154817045, guid: 65ff772b0eb19a541924e761a477f136, type: 3}
+=======
+    - target: {fileID: 2605187898755234345, guid: 1b3fa3588c1afaf4eaf9139c7adb37df, type: 3}
+      propertyPath: m_Name
+      value: Sapling_003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417295590240018579, guid: 1b3fa3588c1afaf4eaf9139c7adb37df, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417295590240018579, guid: 1b3fa3588c1afaf4eaf9139c7adb37df, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417295590240018579, guid: 1b3fa3588c1afaf4eaf9139c7adb37df, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417295590240018579, guid: 1b3fa3588c1afaf4eaf9139c7adb37df, type: 3}
+>>>>>>> Stashed changes:Assets/Pregabs/Obstacles/Obstacle 4.prefab
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
