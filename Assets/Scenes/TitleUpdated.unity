@@ -377,6 +377,9 @@ MonoBehaviour:
   - state: 4
     clips:
     - {fileID: 0}
+  - state: 3
+    clips:
+    - {fileID: 8300000, guid: fa0b6a1f4c9fe7347af22a2453a1d110, type: 3}
   currentMusicPool:
     state: 0
     clips: []

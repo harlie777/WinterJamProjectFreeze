@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ReturnToMain : MonoBehaviour
 {
@@ -11,10 +12,11 @@ public class ReturnToMain : MonoBehaviour
         StartCoroutine(ReturnToMainMenu());
     }
 
-   private IEnumerator ReturnToMainMenu()
+    private IEnumerator ReturnToMainMenu()
     {
         yield return new WaitForSeconds(timeToTransistion);
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0);
+        MusicManager.instance.SwitchMusicState(MusicState.TITLE_SCREEN);
     }
 
 }

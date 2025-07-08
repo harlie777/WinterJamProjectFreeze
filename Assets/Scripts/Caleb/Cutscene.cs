@@ -1,4 +1,5 @@
 using Cinemachine;
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,6 +43,8 @@ public class Cutscene : MonoBehaviour
         gameCam.gameObject.SetActive(false);
         cutsceneCam.gameObject.SetActive(true);
 
+        MusicManager.instance.SwitchMusicState(MusicState.GAMEOVER);
+
     }
 
 
@@ -52,7 +55,8 @@ public class Cutscene : MonoBehaviour
         //Wait for time to stab
         yield return new WaitForSeconds(1.01f);
         Debug.Log("Stabbed");
-        yield return new WaitForSeconds(2.5f);
+        SoundManager.PlaySound(SoundType.PLAYER_DEATH);
+        yield return new WaitForSeconds(2.5f); 
         Application.LoadLevel(0);
     }
 }

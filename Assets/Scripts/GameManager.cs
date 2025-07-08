@@ -4,6 +4,7 @@ using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -138,9 +139,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnPuzzleSolved()
     {
-        if(currentLevel == 15)
+        if (currentLevel == 15)
         {
-            Application.LoadLevel(2);
+            // Application.LoadLevel(2);
+            SceneManager.LoadScene(2);
         }
         currentLevel++;
         GetComponentInChildren<LevelNumberUI>().UpdateLevel(currentLevel);
