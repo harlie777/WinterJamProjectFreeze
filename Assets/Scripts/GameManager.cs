@@ -1,5 +1,6 @@
 
 using Cinemachine;
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -148,8 +149,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void PlayerDied(CinemachineVirtualCamera cutSceneCamera, Animator anim)
-    {
-        if(lives > 1)
+    {   
+        Debug.Log("Out of moves! You died.");
+        SoundManager.PlaySound(SoundType.PLAYER_DEATH);
+        if (lives > 1)
         {
             lives--;
             GetComponentInChildren<HealthUI>().UpdateLives(lives);
